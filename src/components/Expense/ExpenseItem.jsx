@@ -5,7 +5,7 @@ import Card from "../common/Card";
 
 const ExpenseItem = ({ expenses }) => {
   return (
-    <Card className="expenses">
+    <>
       {expenses.map((expense) => {
         return (
           <Card className="expense-item" key={expense.id}>
@@ -17,7 +17,7 @@ const ExpenseItem = ({ expenses }) => {
           </Card>
         );
       })}
-    </Card>
+    </>
   );
 };
 
