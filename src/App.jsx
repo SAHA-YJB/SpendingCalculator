@@ -1,4 +1,5 @@
-import ExpenseItem from "./components/features/ExpenseItem/ExpenseItem.jsx";
+import React from "react";
+import ExpenseItem from "./components/ExpenseItem/ExpenseItem";
 
 const formatNumber = (num) => {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
