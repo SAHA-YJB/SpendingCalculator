@@ -1,5 +1,6 @@
 import React from "react";
-import Expense from "./components/Expense/Expense";
+import Expense from "./components/ExpenseItem/Expense";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const formatNumber = (num) => {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -31,7 +32,12 @@ const expenses = [
   },
 ];
 const App = () => {
-  return <Expense expenses={expenses} />;
+  return (
+    <>
+      <NewExpense />
+      <Expense expenses={expenses} />
+    </>
+  );
 };
 
 export default App;
