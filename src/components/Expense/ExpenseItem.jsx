@@ -1,22 +1,12 @@
 import React from "react";
 import "./ExpenseItem.css";
-import ExpenseDate from "./ExpenseDate";
-import Card from "../common/Card";
-
+import SingleExpenseItem from "./SingleExpenseItem";
 const ExpenseItem = ({ expenses }) => {
   return (
     <>
-      {expenses.map((expense) => {
-        return (
-          <Card className="expense-item" key={expense.id}>
-            <ExpenseDate expenses={expense} />
-            <div className="expense-item__description">
-              <h2>{expense.title}</h2>
-              <div className="expense-item__price">₩ {expense.amount}</div>
-            </div>
-          </Card>
-        );
-      })}
+      {expenses.map((expense) => (
+        <SingleExpenseItem key={expense.id} expense={expense} />
+      ))}
     </>
   );
 };
