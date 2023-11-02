@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = ({ onSaveExpenseData }) => {
+const ExpenseForm = ({ onSaveExpenseData, stopEditiongHandler }) => {
   const [input, setInput] = useState({
     title: "",
     amount: "",
@@ -65,7 +65,10 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
+        <button type="button" onClick={stopEditiongHandler}>
+          취소
+        </button>
+        <button type="submit">추가하기</button>
       </div>
     </form>
   );
