@@ -6,9 +6,14 @@ import ExpenseFilter from "./ExpenseFilter";
 
 const Expense = ({ expenses }) => {
   const [filteredYear, setFilteredYear] = useState("2023");
+
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
+  const filteredExpenses = expenses.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <div>
       <Card className="expenses">
@@ -16,7 +21,7 @@ const Expense = ({ expenses }) => {
           filterChangeHandler={filterChangeHandler}
           filteredYear={filteredYear}
         />
-        <ExpenseItem expenses={expenses} />
+        <ExpenseItem filteredExpenses={filteredExpenses} />
       </Card>
     </div>
   );
