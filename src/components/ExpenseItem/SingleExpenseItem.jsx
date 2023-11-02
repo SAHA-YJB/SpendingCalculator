@@ -6,10 +6,6 @@ import Card from "../common/Card";
 const SingleExpenseItem = ({ expense }) => {
   const [title, setTitle] = useState(expense.title);
 
-  const editTitleHandler = () => {
-    setTitle("Updated!");
-  };
-
   return (
     <Card className="expense-item" key={expense.id}>
       <ExpenseDate expenses={expense} />
@@ -17,7 +13,6 @@ const SingleExpenseItem = ({ expense }) => {
         <h2>{title}</h2>
         <div className="expense-item__price">₩ {expense.amount}</div>
       </div>
-      <button onClick={editTitleHandler}>ooo</button>
     </Card>
   );
 };
