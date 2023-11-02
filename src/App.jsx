@@ -36,8 +36,6 @@ const App = () => {
   const [expensesState, setExpensesState] = useState(expenses);
 
   const addExpenseHandler = (expense) => {
-    console.log("In App.js");
-    console.log(expense);
     return setExpensesState([expense, ...expensesState]);
   };
   return (
